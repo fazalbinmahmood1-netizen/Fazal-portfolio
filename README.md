@@ -50,3 +50,7 @@ The /blog/ listing follows a four-column editorial card layout with responsive m
 ## Agency typography and reference layout
 
 Uses Xylo’s Inter and Inter Display font-face sources, with measured desktop typography (55px hero, 36px section headings, 16–18px body). Ten actual client logos are recorded in content/client-logos.json. The reference layout is adapted with a logo strip, independent project-highlight and process carousels, hand icon, white platform labels and responsive spacing. Carousel text is agency project/process copy, not a customer testimonial.
+
+## Motion and mobile repair
+
+The permanent hand icon is removed. The reference gesture JSON (https://paulnrogers.com/wp-content/uploads/2022/06/lf30_editor_t9bloiua.json, 94 frames at 60fps) plays once below the process carousel dots on viewport entry. Lottie Web 5.12.2 light SVG player is loaded lazily, with its MIT license retained. Desktop client logos move horizontally with scroll; mobile uses the reference’s static grid behavior. Carousels transition at 500ms and advance every 5s while visible, pausing on hover, interaction, document hiding and reduced motion. Touch swipe and keyboard arrows are supported. Slide height is stable. Guide covers have consistent white text; phone cards stack. Browser checks cover 320/390px layouts, mobile menu and search, gesture completion and stable carousel height. Physical phones were not tested.
