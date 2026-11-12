@@ -42,3 +42,7 @@ JavaScript syntax and local internal link/asset integrity are checked. Browser Q
 ## Xylo content update
 
 Source: https://xylosolutions.com/ and https://xylosolutions.com/work (reviewed 13 November 2026). Agency projects are attributed to Xylo Solutions, not claimed as solo work. Conflicting experience/team figures on the source site are omitted. The original layout and Jost typeface are retained; brand colour accents and agency assets match Xylo. Update project copy in `content/xylo-projects.json` and run the generator.
+
+## Blog
+
+The /blog/ listing follows a four-column editorial card layout with responsive mobile styles, 33 articles, three paginated pages and client-side article search. Content includes 28 Xylo project stories imported in content/xylo-articles.json and five adapted service notes. Each article links to its source. No newsletter subscription service is connected. Rebuild with python scripts/build.py.
