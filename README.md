@@ -27,7 +27,7 @@ The generated files are committed, so Python is not required in Cloudflare. Git 
 
 ## Content and launch status
 
-This is a review version, not a verified pixel-perfect copy. It follows the supplied reference's black/white/blush section structure, Jost typography, outlined buttons, project grid, quote bubble and guide cards. Copy and branding are adapted to Fazal. The signature is a temporary text wordmark. Project covers are authored illustrative graphics; replace them with approved real screenshots. The client quote slots are explicitly labelled placeholders and must be replaced or removed before public launch. Contact links point to Xylo Solutions; no contact form or newsletter service is configured. Guides are initial editorial drafts, not researched traffic guarantees.
+This is a review version, not a verified pixel-perfect copy. It follows the supplied reference's black/white/blush section structure, Jost typography, outlined buttons, project grid, quote bubble and guide cards. Copy and branding are adapted to Fazal. The header uses a personal text wordmark; the official agency logo appears in the founder section and footer. Portfolio content and 28 optimised WebP covers were imported from Xylo Solutions with source links recorded in content/xylo-projects.json. The homepage features six projects and the project index lists all 28. The placeholder testimonial section is replaced with the agency’s four-step process; no client testimonials are invented. The agency logo and cyan/teal palette are used while retaining the personal site layout. Contact uses the published company email, address and contact page. No local contact form or newsletter service is configured. Guides are initial editorial drafts, not researched traffic guarantees.
 
 The static site has no admin panel or server-side backend. Content is edited in GitHub/the source files. Search runs in the visitor's browser. Fonts currently load from Google Fonts' font CDN, using `font-display: swap`; no analytics or tracking scripts are included.
 
@@ -38,3 +38,7 @@ Each page includes a title, description, canonical URL and basic Open Graph meta
 ## Validation
 
 JavaScript syntax and local internal link/asset integrity are checked. Browser QA covers desktop rendering, local search, carousel selection, and mobile/tablet iframe layouts. This does not substitute for testing on physical iOS and Android devices.
+
+## Xylo content update
+
+Source: https://xylosolutions.com/ and https://xylosolutions.com/work (reviewed 13 November 2026). Agency projects are attributed to Xylo Solutions, not claimed as solo work. Conflicting experience/team figures on the source site are omitted. The original layout and Jost typeface are retained; brand colour accents and agency assets match Xylo. Update project copy in `content/xylo-projects.json` and run the generator.
