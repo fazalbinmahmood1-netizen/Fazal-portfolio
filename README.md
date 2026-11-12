@@ -46,3 +46,7 @@ Source: https://xylosolutions.com/ and https://xylosolutions.com/work (reviewed 
 ## Blog
 
 The /blog/ listing follows a four-column editorial card layout with responsive mobile styles, 33 articles, three paginated pages and client-side article search. Content includes 28 Xylo project stories imported in content/xylo-articles.json and five adapted service notes. Each article links to its source. No newsletter subscription service is connected. Rebuild with python scripts/build.py.
+
+## Agency typography and reference layout
+
+Uses Xylo’s Inter and Inter Display font-face sources, with measured desktop typography (55px hero, 36px section headings, 16–18px body). Ten actual client logos are recorded in content/client-logos.json. The reference layout is adapted with a logo strip, independent project-highlight and process carousels, hand icon, white platform labels and responsive spacing. Carousel text is agency project/process copy, not a customer testimonial.
