@@ -32,3 +32,15 @@ body{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.5}.signatur
 .header .nav-row,.blog-page .header .nav-row{position:static;min-height:64px;gap:8px;flex-wrap:nowrap;width:90%}.header .signature{font-size:clamp(16px,4.6vw,23px);letter-spacing:-.04em;margin-right:auto;max-width:calc(100% - 96px)}.nav-row>.search-toggle{order:2;width:40px;height:44px;padding:10px}.search-toggle svg{width:20px;height:20px;stroke-width:2.5}.header .menu-toggle{order:3;display:grid;place-items:center;width:40px;height:44px;padding:7px;background:transparent;font-size:0;flex-shrink:0}.header .nav-row nav{position:absolute;left:0;right:0;top:100%;width:100%;margin:0;padding:0;gap:0;background:var(--rose);color:var(--ink);box-shadow:none;border:0;z-index:30;display:none;max-height:calc(100dvh - 64px);overflow-y:auto}.header .nav-row nav.open{display:block}.header .nav-row nav>a,.header .services-menu>summary{display:block;width:100%;margin:0;padding:15px 5%;font-size:20px;line-height:26px;font-weight:500;border:0;border-bottom:1px solid #111;text-decoration:none}.header .services-menu{margin:0;border:0}.header .dropdown{position:static;width:100%;max-height:none;padding:18px 5%;display:grid;grid-template-columns:1fr;gap:20px;background:var(--rose);border-bottom:1px solid #111;box-shadow:none}.header .dropdown span{font-size:13px}.header .dropdown strong{font-size:16px}.header .nav-row nav>a:hover,.header .services-menu>summary:hover{background:#00000008;text-decoration:none}
 }
 @media(prefers-reduced-motion:reduce){.quote-track{transition:none!important}}
+
+/* Keep header controls aligned and carousel edges inside the clipping area. */
+.header .nav-row>.search-toggle{align-self:center;display:grid;place-items:center;margin:0;line-height:1}
+.quote-slider{--avatar-size:80px;--author-left:45px}
+.testimonials .quote-slider{--author-left:70px}
+.quote-slider .quote-author{margin-left:var(--author-left)}
+.quote-slider .quote-author .avatar{width:var(--avatar-size);height:var(--avatar-size)}
+.quote-slider .bubble:after{left:calc(var(--author-left) + var(--avatar-size)/2 - 9px)}
+.sliding .quote-panel{padding:2px}
+@media(max-width:1100px){.intro-note.quote-slider{--author-left:25px}}
+@media(max-width:767px){.quote-slider{--avatar-size:62px;--author-left:20px}.testimonials .quote-slider{--author-left:28px}.intro-note.quote-slider{--author-left:20px}}
+@media(min-width:1025px){.hero{overflow:hidden}.logo-viewport{width:var(--viewport-width,100vw);margin-left:calc((100% - var(--viewport-width,100vw))/2)}.client-logos{min-width:calc(100% + 260px);justify-content:space-between}}

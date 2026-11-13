@@ -18,7 +18,7 @@ document.querySelectorAll('.quote-slider').forEach(slider=>{
  [before,after].forEach(p=>{p.removeAttribute('data-slide');p.setAttribute('aria-hidden','true');p.inert=true;p.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));});
  track.prepend(before);track.append(after);viewport.append(track);slider.classList.add('sliding');
  let index=0,position=1,timer=null,inView=false,hover=false,interacted=false,drag=null,animating=false,settleTimer=null;
- const step=()=>viewport.clientWidth+10;
+ const step=()=>viewport.getBoundingClientRect().width+10;
  function stop(){clearTimeout(timer);}
  function schedule(){stop();if(inView&&!hover&&!interacted&&!motion.matches&&!document.hidden)timer=setTimeout(()=>go(index+1),5000);}
  function paint(animate=true,offset=0){track.style.transitionDuration=animate&&!motion.matches?'500ms':'0ms';track.style.transform=`translate3d(${-position*step()+offset}px,0,0)`;}
@@ -43,7 +43,7 @@ document.querySelectorAll('.quote-slider').forEach(slider=>{
 const logoViewport=document.querySelector('.logo-viewport'),logoTrack=document.querySelector('.client-logos');
 if(logoViewport&&logoTrack){
  const desktop=matchMedia('(min-width:1025px)');let queued=false,visible=true;
- function paint(){queued=false;if(!desktop.matches||motion.matches){logoTrack.style.transform='';return;}const r=logoViewport.getBoundingClientRect(),travel=Math.max(0,logoTrack.scrollWidth-logoViewport.clientWidth),progress=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));logoTrack.style.transform=`translate3d(${-travel*progress}px,0,0)`;}
+ function paint(){queued=false;document.documentElement.style.setProperty('--viewport-width',document.documentElement.clientWidth+'px');if(!desktop.matches||motion.matches){logoTrack.style.transform='';return;}const r=logoViewport.getBoundingClientRect(),travel=Math.max(0,logoTrack.scrollWidth-logoViewport.clientWidth),progress=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height)));logoTrack.style.transform=`translate3d(${-travel*progress}px,0,0)`;}
  function requestPaint(){if(!queued&&visible){queued=true;requestAnimationFrame(paint);}}
  addEventListener('scroll',requestPaint,{passive:true});addEventListener('resize',requestPaint,{passive:true});desktop.addEventListener('change',paint);motion.addEventListener('change',paint);
  if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)requestPaint();},{rootMargin:'100px'}).observe(logoViewport);
