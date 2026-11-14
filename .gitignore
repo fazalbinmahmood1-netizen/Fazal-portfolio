@@ -1,9 +1,0 @@
-.env
-.env.*
-__pycache__/
-*.pyc
-.openai/
-dist/qa.html
-
-dist/server/
-dist/qa-mobile.html
