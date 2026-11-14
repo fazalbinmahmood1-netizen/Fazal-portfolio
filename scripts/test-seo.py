@@ -9,7 +9,7 @@ for f in D.rglob('*.html'):
  assert len(d.xpath('//link[@rel="canonical"]'))==1,str(f)
  data=json.loads(d.xpath('string(//script[@id="site-schema"])'))
  assert data['@context']=='https://schema.org'
- assert any(x['@type']=='Person' and x['sameAs']==['https://www.linkedin.com/in/fazalbinmahmood/'] for x in data['@graph'])
+ assert any(x['@type']=='Person' and x['sameAs']==['https://www.linkedin.com/in/fazalbinmahmood/','https://www.fiverr.com/sellers/fazalbm'] for x in data['@graph'])
  assert d.xpath('//footer//a[@href="https://www.linkedin.com/in/fazalbinmahmood/"]'),str(f)
  assert 'Website source' not in d.text_content()
  if '-project-story/' in str(f):

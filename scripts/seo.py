@@ -4,7 +4,8 @@ from lxml import html, etree
 import json
 BASE='https://fazalbinmahmood.com'
 LINKEDIN='https://www.linkedin.com/in/fazalbinmahmood/'
-PERSON={'@type':'Person','@id':BASE+'/#person','name':'Fazal Bin Mahmood','url':BASE+'/about/','jobTitle':'Shopify Designer and Developer','sameAs':[LINKEDIN],'worksFor':{'@id':BASE+'/#organization'}}
+FIVERR='https://www.fiverr.com/sellers/fazalbm'
+PERSON={'@type':'Person','@id':BASE+'/#person','name':'Fazal Bin Mahmood','url':BASE+'/about/','jobTitle':'Shopify Designer and Developer','sameAs':[LINKEDIN,FIVERR],'worksFor':{'@id':BASE+'/#organization'}}
 ORG={'@type':'Organization','@id':BASE+'/#organization','name':'Xylo Solutions','url':'https://xylosolutions.com/'}
 RELATED={
 'shopify-development':('shopify-redesign-checklist','A practical Shopify redesign checklist','shopify-storefront-design','Planning a Shopify storefront'),
@@ -38,9 +39,9 @@ def enhance(D):
   if not story and route!='/404.html':canonical_paths.append(route)
   # Social links are normal anchors; no third-party widgets or scripts.
   footer=doc.xpath('//footer//div[contains(@class,"footer-grid")]/div')[0]
-  append(footer,f'<div class="profile-links" aria-label="Fazal’s professional profiles"><a class="profile-button" rel="me" href="{LINKEDIN}"><span class="profile-icon" aria-hidden="true">in</span>Connect with Fazal<span aria-hidden="true">↗</span></a></div>')
+  append(footer,f'<div class="profile-links" aria-label="Fazal’s professional profiles"><a class="profile-button" rel="me" href="{LINKEDIN}"><span class="profile-icon" aria-hidden="true">in</span>Connect with Fazal<span aria-hidden="true">↗</span></a><a class="profile-button fiverr-button" rel="me" href="{FIVERR}"><span class="fiverr-icon" aria-hidden="true">fi</span>View my Fiverr profile<span aria-hidden="true">↗</span></a></div>')
   if route=='/about/' and article is not None:
-   append(article,f'<div class="editorial-addition"><h2>Shopify design with a practical development focus</h2><p>I’m based in Lahore, Pakistan, and lead Xylo Solutions. My work connects the visual design of a store with how customers find products, choose options and move towards checkout. You can explore the agency projects featured here and the practical guides that explain the approach.</p><p>For storefront projects, start with <a href="/services/shopify-development/">Shopify development</a> or <a href="/services/shopify-redesign/">Shopify redesign</a>. For personalised products, see <a href="/services/custom-functionality/">custom Shopify functionality</a>.</p><h2>Connect with me</h2><p>Find my professional background and updates on my personal LinkedIn profile.</p><a class="profile-button" rel="me" href="{LINKEDIN}"><span class="profile-icon" aria-hidden="true">in</span>Fazal on LinkedIn<span aria-hidden="true">↗</span></a></div>')
+   append(article,f'<div class="editorial-addition"><h2>Shopify design with a practical development focus</h2><p>I’m based in Lahore, Pakistan, and lead Xylo Solutions. My work connects the visual design of a store with how customers find products, choose options and move towards checkout. You can explore the agency projects featured here and the practical guides that explain the approach.</p><p>For storefront projects, start with <a href="/services/shopify-development/">Shopify development</a> or <a href="/services/shopify-redesign/">Shopify redesign</a>. For personalised products, see <a href="/services/custom-functionality/">custom Shopify functionality</a>.</p><h2>Connect with me</h2><p>Find my professional background and updates on LinkedIn, or explore my services on Fiverr.</p><a class="profile-button" rel="me" href="{LINKEDIN}"><span class="profile-icon" aria-hidden="true">in</span>Fazal on LinkedIn<span aria-hidden="true">↗</span></a><a class="profile-button fiverr-button" rel="me" href="{FIVERR}"><span class="fiverr-icon" aria-hidden="true">fi</span>View my Fiverr profile<span aria-hidden="true">↗</span></a></div>')
   slug=route.strip('/').split('/')[-1]
   if route.startswith('/services/') and slug in DETAILS and article is not None:
    h,p,h2,p2=DETAILS[slug];g,gt,b,bt=RELATED[slug]
